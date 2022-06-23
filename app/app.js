@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose = require("mongoose");
 const express = require('express');
 const app = express();
 require('dotenv').config();
+const routes = require("../api/routes/routes");
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -26,7 +27,7 @@ app.engine('ejs', require('ejs').__express);
 app.use(express.static('public'));
 app.use(express.static('views'));
 
-app.use("/", router);
+app.use("/", routes);
 
 //Error Handling Middleware
 app.use((req,res,next) => {
@@ -42,6 +43,14 @@ app.use((error, req, res, next) =>{
             status: error.status,
         }
     });
+});
+
+mongoose.connect(process.env.db_url, (err) => {
+    if(err){
+        console.error(err)("Error!", err.message);
+    }else{
+        console.log("MongoDB Connected Successfully!");
+    }
 });
 
 module.exports = app;
