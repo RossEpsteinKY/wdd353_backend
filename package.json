@@ -1,0 +1,19 @@
+{
+  "name": "wdd353_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RossEpsteinKY/wdd353_backend.git"
+  },
+  "author": "Ross Epstein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RossEpsteinKY/wdd353_backend/issues"
+  },
+  "homepage": "https://github.com/RossEpsteinKY/wdd353_backend#readme"
+}
