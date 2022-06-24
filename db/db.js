@@ -14,8 +14,6 @@ const postLogin = async (req) => {
 
     password = await bcrypt.hash(password, salt);
 
-    console.log('password becomes: ' + password);
-
     const login = new Login({
         _id: mongoose.Types.ObjectId(),
         userid: req.body.userid,
