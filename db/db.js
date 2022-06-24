@@ -1,7 +1,7 @@
-import res from "express/lib/response";
-import req from "express/lib/request";
-import async from "async";
-import bcrypt from "bcrypt";
+const res = require("express/lib/response");
+const req = require("express/lib/request");
+const async = require('node:async_hooks')
+const bcrypt = require('bcrypt');
 
 const {default: mongoose } = require('mongoose');
 

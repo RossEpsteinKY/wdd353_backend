@@ -27,6 +27,7 @@ app.engine('ejs', require('ejs').__express);
 app.use(express.static('public'));
 app.use(express.static('views'));
 
+
 app.use("/", routes);
 
 //Error Handling Middleware

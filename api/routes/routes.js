@@ -1,9 +1,10 @@
 const express = require("express");
-const res = require("express/lib/response");
-const req = require("express/lib/request");
+// const res = require("express/lib/response");
+// const req = require("express/lib/request");
 const next = require("next");
 const router = express.Router();
 const postLogin = require('../../db/db');
+
 
 
 router.get("/", () =>{
