@@ -1,4 +1,4 @@
-import mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const express = require('express');
 const app = express();
 require('dotenv').config();
@@ -47,7 +47,7 @@ app.use((error, req, res, next) =>{
 
 mongoose.connect(process.env.db_url, (err) => {
     if(err){
-        console.error(err)("Error!", err.message);
+        console.error("Error!", err.message);
     }else{
         console.log("MongoDB Connected Successfully!");
     }
