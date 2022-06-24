@@ -2,13 +2,15 @@ const res = require("express/lib/response");
 const req = require("express/lib/request");
 const async = require('node:async_hooks')
 const bcrypt = require('bcrypt');
+const Login = require('../api/models/login');
 
-const {default: mongoose } = require('mongoose');
+const { default: mongoose } = require('mongoose');
 
 
 const postLogin = async (req) => {
 
     const salt = await bcrypt.genSalt(10);
+
     let password = req.body.password;
 
     password = await bcrypt.hash(password, salt);
@@ -21,3 +23,4 @@ const postLogin = async (req) => {
 
     return await login.save();
 }
+

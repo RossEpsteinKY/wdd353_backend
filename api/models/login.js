@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const stringify = require('querystring');
-const loginschema = mongoose.Schema({
-    _id: mongoose.Schema.types.ObjectId,
+
+const loginSchema = mongoose.Schema({
+
+    _id: mongoose.Schema.Types.ObjectId,
     userid: {
         type: String,
         required: true
@@ -11,3 +13,5 @@ const loginschema = mongoose.Schema({
         required: true
     }
 });
+
+module.exports = mongoose.model("Login", loginSchema);
