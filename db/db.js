@@ -8,15 +8,16 @@ const bcrypt = require('bcrypt');
 const postLogin = async (req) => {
 
 
-    console.log("body is: " + req.body.password);
     const salt = await bcrypt.genSalt(10);
 
     let password = req.body.password;
 
     password = await bcrypt.hash(password, salt);
 
+    console.log('password becomes: ' + password);
+
     const login = new Login({
-        _id: mongoose.Types.ObjectId,
+        _id: mongoose.Types.ObjectId(),
         userid: req.body.userid,
         password: password,
     });
